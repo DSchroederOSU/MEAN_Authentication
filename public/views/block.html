@@ -1,0 +1,80 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html ng-app="blockApp">
+<head>
+    <title>Node Authentication</title>
+
+    <style>
+        body        { padding-top:40px; word-wrap:break-word; }
+    </style>
+    <!-- SPELLS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+
+    <script src="js/controllers/block.js"></script> <!-- load up our controller -->
+    <script src="js/services/building_service.js"></script> <!--  load building service -->
+    <script src="js/services/user_service.js"></script> <!--  load user service -->
+    <script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<body ng-controller="blockController">
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/block">Create Block</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text pr-3 ">
+                Hello, {{google_user.name}}!
+            </span>
+            <a href="/logout" class="btn btn-danger btn-md" role="button" aria-pressed="true">Logout</a>
+
+        </div>
+    </nav>
+
+    <div class="mb-5 mt-5 text-center">
+        <h1><span class="fa fa-anchor"></span> Blocks Page</h1>
+    </div>
+    <div class="row">
+        <form class=" col-sm-6">
+            <h4 class="text-primary mt-2 ml-2">Create A New Block</h4>
+            <div class="form-group col-md-4">
+                <label for="inputBuilding">Building Select:</label>
+
+                <select id="inputBuilding" class="form-control"
+                        ng-options="building.name for building in buildings"
+                        ng-model="selected">
+                </select>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
