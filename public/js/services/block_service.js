@@ -6,7 +6,7 @@ angular.module('blockService', [])
     .factory('Blocks', function($http) {
         return {
             get : function() {
-                return $http.get('/api/buildings');
+                return $http.get('/api/blocks');
             }
         }
     })

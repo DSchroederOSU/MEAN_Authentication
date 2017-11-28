@@ -25,24 +25,6 @@
     <div id="nav">
         <div ng-include="'/navigation'"></div>
     </div>
-
-    <div class="mb-5 mt-5 text-center">
-        <h1><span class="fa fa-anchor"></span> Blocks Page</h1>
-    </div>
-    <div class="row">
-        <form class=" col-sm-6">
-            <h4 class="text-primary mt-2 ml-2">Create A New Block</h4>
-            <div class="form-group col-md-4">
-                <label for="inputBuilding">Building Select:</label>
-
-                <select id="inputBuilding" class="form-control"
-                        ng-options="building.name for building in buildings"
-                        ng-model="selected">
-                </select>
-            </div>
-        </form>
-    </div>
-
 </div>
 </body>
 </html>

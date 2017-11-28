@@ -28,6 +28,10 @@ module.exports = function(app, passport) {
         });
 
     });
+    app.get('/api/blocks', function(req, res) {
+        res.json(req.user.block);
+
+    });
     // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
@@ -35,6 +39,13 @@ module.exports = function(app, passport) {
         res.render('index.html'); // load the index.html file
     });
 
+    app.get('/home', function(req, res) {
+        res.render('home.html'); // load the index.html file
+    });
+
+    app.get('/navigation', function(req, res) {
+        res.render('navigation.html'); // load the index.html file
+    });
     // =====================================
     // PROFILE SECTION =====================
     // =====================================
