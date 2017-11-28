@@ -1,7 +1,7 @@
 # MEAN_Authentication
 
 clone this repository and run:
-````npm install```
+``npm install```
 
 you will need to run a mongod daemon to connect to your local database:
 ```mongod```
@@ -19,4 +19,4 @@ additionally, the config/auth.js should be filled out with your Google API crede
 
 };```
 and you should set the callback url in your google console to:
-````http://localhost:8080/auth/google/callback```
+```http://localhost:8080/auth/google/callback```
