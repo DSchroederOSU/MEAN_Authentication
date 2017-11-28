@@ -27,3 +27,7 @@ module.exports = {
 and you should set the callback url in your google console to:
 
 ```http://localhost:8080/auth/google/callback```
+
+lastly, run:
+
+```node server.js```
