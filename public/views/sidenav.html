@@ -1,0 +1,45 @@
+<ul id="sideNavList" class="nav nav-pills flex-column">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Overview </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="" ng-click="$parent.viewPath='/profile'">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="" ng-click="$parent.viewPath='/story'">Stories</a>
+    </li>
+    <li class="nav-item">
+        <a id="blockMenu" class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">
+            Blocks
+            <span class="ml-1 align-middle d-inline-block" style="width: 0;
+                         height: 0;
+                         border-left: 5px solid transparent;
+                         border-right: 5px solid transparent;
+                         border-top: 5px solid #007bff;">
+                        </span>
+        </a>
+        <div class="collapse" id="submenu1" aria-expanded="false">
+            <ul class="flex-column pl-2 nav">
+                <li class="nav-item"><a id="viewblock" class="nav-link" href="" ng-click="$parent.viewPath='/block'">View Blocks</a></li>
+                <li class="nav-item"><a id="addblock" class="nav-link " href="">Add Blocks</a></li>
+            </ul>
+        </div>
+    </li>
+</ul>
+<script>
+    $( '#sideNavList a' ).on( 'click', function () {
+        if(this.id == "blockMenu"){
+            $( '#sideNavList' ).find( 'a.active' ).removeClass( 'active' );
+        }
+        else{
+            $( '#sideNavList' ).find( 'a.active' ).removeClass( 'active' );
+            $( this ).addClass( 'active' );
+        }
+        if(this.id !== "blockMenu" && this.id !== "viewblock" && this.id !== "addblock"){
+            console.log($( '#blockMenu' ));
+            console.log($( '#blockMenu' ).first());
+            $( '#submenu1' ).attr('class', 'collapse');
+        }
+
+    });
+</script>

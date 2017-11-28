@@ -1,2 +1,4 @@
-var profileApp = angular.module('profileApp', ['mainController', 'userService']);
-var blockApp = angular.module('blockApp', ['ngbuildingSelect', 'buildingService', 'userService']);
+var profileApp = angular.module('myApp', ['profileController', 'blockController', 'buildingService', 'userService']);
+
+
+

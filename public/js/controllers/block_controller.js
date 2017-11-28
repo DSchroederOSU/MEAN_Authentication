@@ -1,5 +1,5 @@
 
-angular.module('ngbuildingSelect', [])
+angular.module('blockController', [])
     .controller('blockController', function($scope, Buildings, UserGoogle) {
 
         Buildings.get()

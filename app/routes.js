@@ -46,6 +46,9 @@ module.exports = function(app, passport) {
     app.get('/navigation', function(req, res) {
         res.render('navigation.html'); // load the index.html file
     });
+    app.get('/sidenav', function(req, res) {
+        res.render('sidenav.html'); // load the index.html file
+    });
     // =====================================
     // PROFILE SECTION =====================
     // =====================================
@@ -75,7 +78,7 @@ module.exports = function(app, passport) {
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect : '/profile',
+            successRedirect : '/home',
             failureRedirect : '/'
     }));
     app.get('/profile', isLoggedIn, function(req, res) {
@@ -89,6 +92,11 @@ module.exports = function(app, passport) {
     // =====================================
     app.get('/block', isLoggedIn, function(req, res) {
         res.render('block.html', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
+    app.get('/story', isLoggedIn, function(req, res) {
+        res.render('stories.html', {
             user : req.user // get the user out of session and pass to template
         });
     });
