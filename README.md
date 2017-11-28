@@ -31,3 +31,5 @@ and you should set the callback url in your google console to:
 lastly, run:
 
 ```node server.js```
+
+To serve up the application on http://localhost:8080/
