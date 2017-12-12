@@ -1,4 +1,1 @@
-var profileApp = angular.module('myApp', ['profileController', 'blockController', 'buildingService', 'userService']);
-
-
-
+var profileApp = angular.module('myApp', ['profileController', 'blockController', 'buildingService', 'blockService', 'userService']);

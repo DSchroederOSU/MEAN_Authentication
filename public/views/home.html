@@ -18,6 +18,7 @@
     <script src="js/controllers/block_controller.js"></script> <!-- load up our controller -->
     <script src="js/services/user_service.js"></script> <!--  load our candy service -->
     <script src="js/services/building_service.js"></script> <!--  load our candy service -->
+    <script src="js/services/block_service.js"></script> <!--  load our candy service -->
     <script src="js/core.js"></script> <!-- load our main application -->
 
 </head>
@@ -29,10 +30,11 @@
 
 <div class="container-fluid mt-1">
     <div class="row" >
-        <nav id="sidenav" class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+        <div style="display:none;" ng-include="'/showDashboards'"></div>
+        <nav id="sidenav" class="col-sm-2 col-md-2 d-none d-sm-block bg-light sidebar"">
             <div ng-include="'/sidenav'"></div>
         </nav>
-        <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+        <main role="main" class="col-sm-10 ml-sm-auto col-md-10 pt-3">
             <div ng-controller="profileController" ng-include="viewPath"></div>
         </main>
     </div>

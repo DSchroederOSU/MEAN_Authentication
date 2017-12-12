@@ -6,22 +6,31 @@
         <a class="nav-link" href="" ng-click="$parent.viewPath='/profile'">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="" ng-click="$parent.viewPath='/story'">Stories</a>
+        <a id="stories" class="nav-link" href="" ng-click="$parent.showDashboards()">
+            Stories
+            <span class="ml-1 align-middle d-inline-block" style="width: 0;
+                         height: 0;
+                         border-top: 5px solid transparent;
+                         border-left: 5px solid #007bff;
+                         border-bottom: 5px solid transparent;">
+                        </span>
+        </a>
     </li>
     <li class="nav-item">
         <a id="blockMenu" class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">
             Blocks
-            <span class="ml-1 align-middle d-inline-block" style="width: 0;
+            <span id="blockArrow" class="ml-1 align-middle d-inline-block"
+                  style="width: 0;
                          height: 0;
                          border-left: 5px solid transparent;
                          border-right: 5px solid transparent;
                          border-top: 5px solid #007bff;">
-                        </span>
+            </span>
         </a>
         <div class="collapse" id="submenu1" aria-expanded="false">
             <ul class="flex-column pl-2 nav">
-                <li class="nav-item"><a id="viewblock" class="nav-link" href="" ng-click="$parent.viewPath='/block'">View Blocks</a></li>
-                <li class="nav-item"><a id="addblock" class="nav-link " href="">Add Blocks</a></li>
+                <li class="nav-item"><a id="viewblock" class="nav-link" href="" ng-click="$parent.viewPath='/blocks'">View Blocks</a></li>
+                <li class="nav-item"><a id="addblock" class="nav-link " href="" ng-click="$parent.viewPath='/addblock'">Add Blocks</a></li>
             </ul>
         </div>
     </li>

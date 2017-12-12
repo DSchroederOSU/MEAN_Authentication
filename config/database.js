@@ -1,5 +1,5 @@
 module.exports = {
 
-    url : 'mongodb://localhost/'
+    url : 'mongodb://localhost/local'
 
 };

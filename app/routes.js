@@ -2,11 +2,15 @@
 
 var User = require('./models/user');
 var Building = require('./models/building');
+var Charts = require('./models/chart');
 module.exports = function(app, passport) {
-
+    // =====================================
+    // API ROUTES ==========================
+    // =====================================
     app.get('/api/candy', function(req, res) {
         res.json(req.user.candy); // return all candy in JSON format
     });
+
     app.post('/api/candy', function(req, res) {
         var user = req.user;
         var new_candy = {name: req.body.text};
@@ -18,19 +22,30 @@ module.exports = function(app, passport) {
             res.json(req.user.candy); // return all candy in JSON format
         });
     });
-    app.get('/api/google_user', function(req, res) {
 
+    app.get('/api/google_user', function(req, res) {
         res.json(req.user.google); // return google profile in JSON format
     });
+
     app.get('/api/buildings', function(req, res) {
         Building.find({}, function (err, buildings) {
             res.json(buildings); // return all buildings in JSON format
         });
 
     });
+
     app.get('/api/blocks', function(req, res) {
         res.json(req.user.block);
+    });
 
+    app.get('/api/charts', function(req, res) {
+        Charts.find({}, function (err, charts) {
+            res.json(charts); // return all charts in JSON format
+        });
+    });
+
+    app.get('/api/userblocks', isLoggedIn, function(req, res) {
+        res.json(req.user.block);
     });
     // =====================================
     // HOME PAGE (with login links) ========
@@ -81,22 +96,27 @@ module.exports = function(app, passport) {
             successRedirect : '/home',
             failureRedirect : '/'
     }));
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.html', {
-            user : req.user // get the user out of session and pass to template
-        });
-    });
 
     // =====================================
     // Block Routes ========================
     // =====================================
-    app.get('/block', isLoggedIn, function(req, res) {
-        res.render('block.html', {
+    app.get('/addblock', isLoggedIn, function(req, res) {
+        res.render('addblock.html', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
+    app.get('/blocks', isLoggedIn, function(req, res) {
+        res.render('blocks.html', {
             user : req.user // get the user out of session and pass to template
         });
     });
     app.get('/story', isLoggedIn, function(req, res) {
         res.render('stories.html', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
+    app.get('/showDashboards', isLoggedIn, function(req, res) {
+        res.render('secondary-sidenav.html', {
             user : req.user // get the user out of session and pass to template
         });
     });

@@ -6,10 +6,14 @@
         <h4 class="text-primary mt-2 ml-2">Create A New Block</h4>
         <div class="form-group col-md-4">
             <label for="inputBuilding">Building Select:</label>
-
             <select id="inputBuilding" class="form-control"
                     ng-options="building.name for building in buildings"
-                    ng-model="selected">
+                    ng-model="buildingselected">
+            </select>
+            <label for="inputChart">Chart Type:</label>
+            <select id="inputChart" class="form-control"
+                    ng-options="chart.name for chart in charts"
+                    ng-model="chartselected">
             </select>
         </div>
     </form>

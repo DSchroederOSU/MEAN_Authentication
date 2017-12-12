@@ -8,6 +8,8 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "angular": "^1.6.7",
+    "angular-daterangepicker": "^0.2.3-alpha1",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.15.2",
     "connect-flash": "~0.1.1",

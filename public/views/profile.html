@@ -5,25 +5,12 @@
 <div class="row">
     <!-- GOOGLE INFORMATION -->
     <div class="col-sm-6">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="text-danger"><span class="fa fa-google-plus card-title"></span> Google</h3>
-            </div>
-            <div class="card-body">
-                <p>
-                    <strong>id</strong>: {{google_user.id}} <br>
-                    <strong>token</strong>: {{google_user.token}}<br>
-                    <strong>email</strong>: {{google_user.email}}<br>
-                    <strong>name</strong>: {{google_user.name}}
-                </p>
-            </div>
 
-        </div>
         <!-- LOOP OVER THE CANDYS IN $scope.candy -->
         <h4 class="text-danger mt-2 ml-2">Favorite Candy</h4>
         <label for="inputCandy">Choose Candy:</label>
         <select id="inputCandy" class="form-control"
-                ng-options="candy.name for candy in candys"
+                ng-options="c.name for c in candys"
                 ng-model="$parent.selected">
         </select>
     </div>
